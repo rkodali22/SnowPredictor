@@ -1,0 +1,10 @@
+{
+  "applications": {
+    "SnowPredictor": {
+      "applicationId": "SwutnuwjEgzYCNXEpbFScSovij9ZZxTgT7FmexYA"
+    },
+    "_default": {
+      "link": "SnowPredictor"
+    }
+  }
+}
