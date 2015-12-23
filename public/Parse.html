@@ -1,0 +1,55 @@
+<HTML>
+<head>
+<script src="Parse.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<script type="text/javascript">
+function init(){
+	Parse.initialize("Key1", "Key2");
+
+	var TestObject = Parse.Object.extend("TestObject");
+	/*testObject.save({foo: "bar"}).then(function(object) {
+	  alert("yay! it worked");
+	});*/
+}
+init();
+function createUser(){
+	var username = $("Username");
+	var password1 = $("Password");
+	var currentUser = new Parse.User();
+	currentUser.signup({
+		username:username.value,
+		password:password1.value,
+		streak:0,
+		over:0,
+		equal:0,
+		under:0,
+		percent:1,
+		choice:0
+	});
+	username.value = "";
+	password1.value = "";
+}
+function $(a){
+	return document.getElementById(a);
+}
+function login(){
+	var username = $("Username");
+	var password = $("Password");
+	var query = new Parse.Query(Parse.Object.extend("NewUser"));
+
+}
+</script>
+</head>
+<body>
+	<h1>Create User</h1>
+	<br>
+	Username:&nbsp;<input type="text" id="Username">
+	<br>
+	Password:&nbsp;<input type="password" id="Password">
+	<br>
+	<button onclick="">Login</button>
+	<br>
+	<button onclick="createUser()">Sign-up</button>
+	
+</body>
+</HTML>
